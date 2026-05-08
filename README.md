@@ -94,4 +94,4 @@ Of course, you'll want to add your cameras as well before doing anything too fun
 
 - **LeRobot Library Structure and Hardware Integration**
 - **The importance of feature scaling:** At first, I had the teleop-side arduino sending 0 & 1 based on the switch state.  This resulted in **extremely** slow progress during policy training (loss was decreasing slower than molasses). The realization that came was that the logsplitter.vel feature should have about the same range as the other robot joints, which are scaled from -100 to 100 in the LeRobot code. Changing logsplitter.vel to range from -50 to 50 immediately fixed my slow training convergence problem.
-- **Test material:** I tried _many_ materials for viable "logs". Zucchini work best ;) &nbsp (see video)
+- **Test material:** I tried _many_ materials for viable "logs". Zucchini work best ;) &nbsp; (see video)
