@@ -1,6 +1,6 @@
 # LeRobot Logsplitter
 
-**[YouTube Expo](https://youtu.be/pou4PEhgJao)**
+**[This Project on YouTube](https://youtu.be/pou4PEhgJao)**
 
 Extending the hardware and code for the huggingface LeRobot SO-101; adding a (desktop-sized) log splitter and training it to operate autonomously via the ACT policy.
 
@@ -15,11 +15,13 @@ Extending the hardware and code for the huggingface LeRobot SO-101; adding a (de
 
 I'm using a dual-throw switch with both arduino inputs configured as INPUT_PULLUP, so the switch is either open, or connecting one of the input pins to ground:
 
+```
            ┌──── Pin 2
           /  ↑ up:    Pin 2 → GND (reads LOW)
   GND ───·   ─ center: open (both pins float HIGH)
           \  ↓ down:  Pin 3 → GND (reads LOW)
            └──── Pin 3
+```
 
 - **Follower side:** Receives actions (velocity commands) from host and drives the splitter motor accordingly
 
@@ -92,4 +94,4 @@ Of course, you'll want to add your cameras as well before doing anything too fun
 
 - **LeRobot Library Structure and Hardware Integration**
 - **The importance of feature scaling:** At first, I had the teleop-side arduino sending 0 & 1 based on the switch state.  This resulted in **extremely** slow progress during policy training (loss was decreasing slower than molasses). The realization that came was that the logsplitter.vel feature should have about the same range as the other robot joints, which are scaled from -100 to 100 in the LeRobot code. Changing logsplitter.vel to range from -50 to 50 immediately fixed my slow training convergence problem.
-- **Test material:** I tried _many_ materials for viable "logs". Zucchini work best ;) (see video)
+- **Test material:** I tried _many_ materials for viable "logs". Zucchini work best ;) &nbsp (see video)
