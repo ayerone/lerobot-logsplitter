@@ -1,0 +1,5 @@
+
+# lerobot_robot_logsplitter package
+from .config_logsplitter_follower import LogsplitterFollowerConfig
+from .logsplitter_follower import LogsplitterFollower
+
