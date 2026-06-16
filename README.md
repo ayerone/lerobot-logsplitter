@@ -2,9 +2,9 @@
 
 <img src="images/log_splitter.gif" width="540" alt="Log splitter in action">
 
-**[This Project on YouTube](https://youtu.be/pou4PEhgJao)**
-
 Extending the hardware and code for the huggingface LeRobot SO-101; adding a (desktop-sized) log splitter and training it to operate autonomously via the ACT policy.
+
+**[This Project on YouTube](https://youtu.be/pou4PEhgJao)**
 
 ## Hardware
 
