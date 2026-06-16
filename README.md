@@ -77,14 +77,14 @@ from lerobot_robot_logsplitter_follower import LogsplitterFollower, LogsplitterF
 
 leader = LogsplitterLeader(LogsplitterLeaderConfig(
 	id="my_logsplitter_leader",
-    port="/dev/ttyUSB0",
-    logsplitter_switches_port="/dev/ttyUSB1",
+    port="/port-of-your-leader-arm",
+    logsplitter_switches_port="/arduino-port-with-the-switches",
 ))
 
 robot = LogsplitterFollower(LogsplitterFollowerConfig(
 	id="my_logsplitter_follower"
-    port="/dev/ttyUSB2",
-    logsplitter_motor_port="/dev/ttyUSB3",
+    port="/port-of-your-follower-arm",
+    logsplitter_motor_port="/arduino-port-with-the-log-splitter",
 ))
 ```
 
