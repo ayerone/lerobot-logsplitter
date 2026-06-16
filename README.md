@@ -17,6 +17,8 @@ Extending the hardware and code for the huggingface LeRobot SO-101; adding a (de
 
 I'm using a dual-throw switch with both arduino inputs configured as INPUT_PULLUP, so the switch is either open, or connecting one of the input pins to ground:
 
+<img src="images/dual_throw_switch.jpg" width="540" alt="Dual throw switch">
+
 ```
            ┌──── → GND (Pin 2 reads LOW)
           /  ↑ up:
