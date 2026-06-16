@@ -17,7 +17,7 @@ Extending the hardware and code for the huggingface LeRobot SO-101; adding a (de
 
 I'm using a dual-throw switch with both arduino inputs configured as INPUT_PULLUP, so the switch is either open, or connecting one of the input pins to ground:
 
-<img src="images/dual_throw_switch.jpg" width="540" alt="Dual throw switch">
+<img src="images/dual_throw_switch.jpg" width="360" alt="Dual throw switch">
 
 ```
            ┌──── → GND (Pin 2 reads LOW)
@@ -95,6 +95,8 @@ robot = LogsplitterFollower(LogsplitterFollowerConfig(
 Of course, you'll want to add your cameras as well before doing anything too fun.
 
 ## I Learned:
+
+<img src="images/zucchini_toss.gif" width="320" alt="please don't report me to people for the ethical treatment of zucchini">
 
 - **LeRobot Library Structure and Hardware Integration**
 - **The importance of feature scaling:** At first, I had the teleop-side arduino sending 0 & 1 based on the switch state.  This resulted in **extremely** slow progress during policy training (loss was decreasing slower than molasses). The realization that came was that the logsplitter.vel feature should have about the same range as the other robot joints, which are scaled from -100 to 100 in the LeRobot code. Changing logsplitter.vel to range from -50 to 50 immediately fixed my slow training convergence problem.
